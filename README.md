@@ -13,4 +13,4 @@ thread at rcgroups https://www.rcgroups.com/forums/showthread.php?2869828-Uavcan
 <a href="http://www.olliw.eu/uploads/uc4h-gps-magnetometer-board-v02.png"><img src="http://www.olliw.eu/uploads/uc4h-gps-magnetometer-board-v02.png" width="720"/></a>
 
 <strong>UC4H Power Brick Node</strong><br>
-<a href="http://www.olliw.eu/uploads/uc4h-powerbrick-board-v01.png"><img src="http://www.olliw.eu/uploads/uc4h-powerbrick-board-v01.png" width="480"/></a>
+<a href="http://www.olliw.eu/uploads/uc4h-powerbrick-board-v02.png"><img src="http://www.olliw.eu/uploads/uc4h-powerbrick-board-v02.png" width="480"/></a>
