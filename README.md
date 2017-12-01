@@ -12,5 +12,7 @@ thread at rcgroups https://www.rcgroups.com/forums/showthread.php?2869828-Uavcan
 <strong>UC4H Power Brick Node</strong><br>
 <a href="http://www.olliw.eu/uploads/uc4h-powerbrick-board-v02.png"><img src="http://www.olliw.eu/uploads/uc4h-powerbrick-board-v02.png" width="480"/></a>
 
+<strong>UC4H ESC-Actuator Node</strong><br>
+
 <strong>UC4H SLCAN Adapter</strong><br>
 <a href="http://www.olliw.eu/uploads/uc4h-slcan-adapter-board-v01.png"><img src="http://www.olliw.eu/uploads/uc4h-slcan-adapter-board-v01.png" width="360"/></a>
