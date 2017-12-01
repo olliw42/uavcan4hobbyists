@@ -1,4 +1,4 @@
-Uavcan For Hobbyists (UC4H)
+UAVCAN For Hobbyists (UC4H)
 ===========================
 
 <strong>UAVCAN nodes for DIY</strong>
