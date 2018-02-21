@@ -1,0 +1,22 @@
+Stückliste exportiert aus C:/Users/Olli/Documents/GitHub/uavcan4hobbyists/pcbs/UC4H ESC Mini/uc4h esc mini v100.sch am 21.02.2018 11:37
+
+Part Value            Device                Package            Description                  TP_SIGNAL_NAME
+C1   10u/10V          C-EUC1206             C1206              CAPACITOR, European symbol                 
+C2   100n             C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C3   1u               C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C4   100n             C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C5   100n             C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C6   100n             C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C7   100n             C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C8   100n             C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+D1   BAT54J           DIODE-SOD110-R        SOD110-R           DIODE                                      
+F1   0ZCK0020FF2G     FUSE-PTCFUSE-0805     FUSE-0805                                                     
+IC1  STM32F103T8      STM32F10XTXU6         VFQFPN36           STM32F101/103 36pad VFQPFN36               
+IC2  TC1015-3.3VCT713 V_REG_TPS76433SOT23-5 SOT23-5            Voltage Regulator                          
+IC3  TJA1051TK/3      TJA1051TK/3           HVSON8                                                        
+JP1  JST-GH-4         JST-GH-4              SM04B-GHS-TB                                                  
+Q1   CSTCE8M00G55-R0  RESONATORSMD          RESONATOR-SMD      Resonator                                  
+R1   120              R-EU_R0603            R0603              RESISTOR, European symbol                  
+SWD  PH4              P4X1_1P27-OCT_BILEX   4X1_1P27_OCT_BILEX                                            
+TP1  TPB1,27          TPB1,27               B1,27              Test pad                                   
+TP2  TPB1,27          TPB1,27               B1,27              Test pad                                   

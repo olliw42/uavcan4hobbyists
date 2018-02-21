@@ -1,18 +1,19 @@
 UAVCAN For Hobbyists (UC4H)
 ===========================
 
-<strong>UAVCAN nodes for DIY</strong>
+The project aims at bringing UAVCAN devices to hobbyists at low cost.
 
-project web page http://www.olliw.eu/2017/uavcan-for-hobbyists/<br>
-thread at rcgroups https://www.rcgroups.com/forums/showthread.php?2869828-Uavcan-for-Hobbyists
+Project web page http://www.olliw.eu/2017/uavcan-for-hobbyists/<br>
+Discussion thread at rcgroups https://www.rcgroups.com/forums/showthread.php?2869828-Uavcan-for-Hobbyists
+
+This project comprises these UAVCAN nodes and devices:
 
 <strong>UC4H GPS-Magnetometer Node</strong><br>
-<a href="http://www.olliw.eu/uploads/uc4h-gps-magnetometer-board-v02.png"><img src="http://www.olliw.eu/uploads/uc4h-gps-magnetometer-board-v02.png" width="720"/></a>
 
 <strong>UC4H Power Brick Node</strong><br>
-<a href="http://www.olliw.eu/uploads/uc4h-powerbrick-board-v02.png"><img src="http://www.olliw.eu/uploads/uc4h-powerbrick-board-v02.png" width="480"/></a>
 
 <strong>UC4H ESC-Actuator Node</strong><br>
 
+<strong>UC4H Notify Node</strong><br>
+
 <strong>UC4H SLCAN Adapter</strong><br>
-<a href="http://www.olliw.eu/uploads/uc4h-slcan-adapter-board-v01.png"><img src="http://www.olliw.eu/uploads/uc4h-slcan-adapter-board-v01.png" width="360"/></a>
