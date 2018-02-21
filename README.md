@@ -1,5 +1,4 @@
 # UAVCAN For Hobbyists (UC4H)
-===========================
 
 The project aims at bringing UAVCAN devices to hobbyists at low cost.
 
