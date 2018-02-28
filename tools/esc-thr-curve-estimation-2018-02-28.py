@@ -4,7 +4,7 @@ measurement of rpm vs pwm and I vs pwm, using a UC4H ESC KISS32A node
 => calculation of estimated thrust vs pwm
 => fit to poly function to estimate MOT_THST_EXPO parameter
 
-OlliW 27.Feb.2018
+OlliW 28.Feb.2018
 '''
 
 #based on the example here: http://uavcan.org/Implementations/Pyuavcan/Examples/ESC_throttle_control/
@@ -19,15 +19,20 @@ from scipy.optimize import curve_fit
 
 
 # class to record data in repeated up/down sweeps
+cSTATUS_INITIALIZEMOTOR = 0
+cSTATUS_INITIALRAMP = 1
+cSTATUS_RECORDINGRAMP = 2
+cSTATUS_ABORTRAMP = 3
+cSTATUS_EXIT = 4
+
 class cRecord:
 
     def __init__(self,_node,_escIndex,_fig=None,_ax=None,_ax2=None):
         self.node = _node
         self.escIndex = _escIndex
         
-        self.status = 0 #0 = init, 1 = run, 2 = stop, 3 = exit
+        self.status = cSTATUS_INITIALIZEMOTOR
         self.status_cnt = 20 #startup initialization time, 1 sec
-        self.start_time = 0
         self.setpoint = int(0)
         self.direction_up = True
         
@@ -44,40 +49,50 @@ class cRecord:
         self.ax2 = _ax2
 
     def broadcastEscSetpoint(self):
-        if self.status == 0:
+        if self.status == cSTATUS_INITIALIZEMOTOR:
             self.setpoint = int(0)
             self.status_cnt -= 1
             if self.status_cnt <= 0: 
-                self.start_time = time.time()
-                self.status = 1
-        elif self.status == 1 or self.status == 2:
+                self.direction_up = True
+                self.status = cSTATUS_INITIALRAMP #cSTATUS_RECORDINGRAMP
+        elif self.status == cSTATUS_INITIALRAMP:
+            if self.direction_up:
+                self.setpoint += 20 
+                if self.setpoint >= 1500: self.direction_up = False
+            else:
+                self.setpoint -= 20
+                if self.setpoint <= 100: 
+                    self.direction_up = True
+                    self.status = cSTATUS_RECORDINGRAMP
+        elif self.status == cSTATUS_RECORDINGRAMP or self.status == cSTATUS_ABORTRAMP:
             if self.direction_up:
                 self.setpoint += 20 
                 if self.setpoint >= 8100: self.direction_up = False
             else:
                 self.setpoint -= 20
                 if self.setpoint <= 100: self.direction_up = True
-            if self.status == 2:
+            if self.status == cSTATUS_ABORTRAMP:
                 self.direction_up = False # 'quick' abort, comment out to have complete sweeps
                 if self.setpoint <= 101:
                     self.setpoint = int(0)
-                    self.status = 3
+                    self.status = cSTATUS_EXIT
     
-        #print(self.setpoint)
         commands = self.emptyCommands
         commands[self.escIndex] = self.setpoint
         message = uavcan.equipment.esc.RawCommand(cmd=commands)
         self.node.broadcast(message)
     
     def printEscStatus(self,msg):
-        if self.setpoint > 0:
+        if self.status >= cSTATUS_RECORDINGRAMP and not math.isnan(msg.message.rpm) and not math.isnan(msg.message.current):
             self.pwm.append(self.setpoint)
             self.rpm.append(msg.message.rpm)
             self.current.append(msg.message.current)
-        if self.status >= 2:
+            
+        if self.status >= cSTATUS_ABORTRAMP:
             print('  ',self.setpoint,', ',msg.message.rpm,'rpm, ',msg.message.current,'A','STOP')
         else:
             print('  ',self.setpoint,', ',msg.message.rpm,'rpm, ',msg.message.current,'A')
+            
         if self.fig:
             self.ax.clear()
             self.ax.plot(self.pwm,self.rpm,'bo')
@@ -85,22 +100,17 @@ class cRecord:
             self.ax2.plot(self.pwm,self.current,'r')
             self.fig.canvas.draw()
             time.sleep(0.01)
-        
         #print(uavcan.to_yaml(msg))
         
-    def plot(self):
-        return
-
     def run(self):
         hPeriodic = self.node.periodic(0.05, self.broadcastEscSetpoint)
         hEscStatus = self.node.add_handler(uavcan.equipment.esc.Status, self.printEscStatus)
-        while self.status < 3:
+        while self.status < cSTATUS_EXIT:
             try:
                 self.node.spin(1)
-                self.plot()
                 if msvcrt.kbhit():
                     msvcrt.getch()
-                    self.status = 2
+                    self.status = cSTATUS_ABORTRAMP
             #except UAVCANException as ex: #leads to NameError: name is not defined ???
             #    print('NODE ERROR:', ex)            
             except KeyboardInterrupt:
@@ -110,7 +120,7 @@ class cRecord:
 
         
 def createFig0():
-#    plt.ion()
+    #plt.ion()
     fig0 = plt.figure(0)
     
     ax01 = fig0.add_subplot(111)
@@ -227,11 +237,10 @@ Theory
     coefEsts = nlinfit(throttle_normalised, thrust_normalised, mdl, startingVals);
     disp(['MOT_THST_EXPO is : ', num2str(coefEsts)]);
 '''
-def fitNormalizedThurstCurve(pwm_norm,thrust_norm):
+def fitFunc(x, a):
+    return (1.0-a) * x + a * x*x
 
-    def func(x, a):
-        return (1.0-a) * x + a * x*x
-        
+def fitNormalizedThurstCurve(pwm_norm,thrust_norm):
     '''
     thrust_norm = []
     for i in range(len(pwm_norm)): thrust_norm.append( func(pwm_norm[i],0.8) )        
@@ -240,7 +249,7 @@ def fitNormalizedThurstCurve(pwm_norm,thrust_norm):
     xdata = np.array(pwm_norm)
     ydata = np.array(thrust_norm)
         
-    popt, pcov = curve_fit(func, xdata, ydata, p0=(0.5))    
+    popt, pcov = curve_fit(fitFunc, xdata, ydata, p0=(0.5))    
     return popt[0], pcov[0][0]
     
         
@@ -259,8 +268,8 @@ def createNode(com):
         node.spin(timeout=1)
         
     all_node_ids = list(node_monitor.get_all_node_id())
-    print( 'Detected Node IDs',all_node_ids)
-    print( 'Node ID in use',all_node_ids[0])
+    print( '\nDetected Node IDs',all_node_ids)
+    print( 'Node ID in use',all_node_ids[0],)
     node_dict = node_monitor.get(all_node_ids[0]) #momentarily, always use the first, one shouldk use an ESC detection scheme as in the examples
     
     return node;
@@ -270,22 +279,28 @@ if __name__ == '__main__':
 
     node = createNode('COM38');
     
-    print('press keyboard to start... ')
+    escIndex = 0
+
+    print('\nsave files at end (y/n)?')
+    saveFiles = False
+    if msvcrt.getch() != 'n': saveFiles = True
+    
+    print('\nPress keyboard to START... ')
     while True:
         try:
             if msvcrt.kbhit():
-                msvcrt.getch()
+                msvcrt.getche()
                 break
         except KeyboardInterrupt:
             sys.exit(0)
 
-    print('START Data recording... ')
+    print('\nSTART Data recording... ')
     fig0, ax01, ax02 = createFig0()
     plt.show(block=False)
-    record = cRecord(node, 3, fig0, ax01, ax02) #enter the desired esc index
+    record = cRecord(node, escIndex, fig0, ax01, ax02) #enter the desired esc index
     record.run()
     print('DONE')
-    
+
     if len(record.pwm) > 2:
         print('calculating thrust curve... ')
         pwm_scaled, thrust = calculateThrust(record)
@@ -298,12 +313,38 @@ if __name__ == '__main__':
         print('DONE')
         
         print('fitting normalized thrust curve... ')
-        popt, pcov = fitNormalizedThrustCurve(pwm_norm, thrust_norm)
+        popt, pcov = fitNormalizedThurstCurve(pwm_norm, thrust_norm) #       popt, pcov = 0.5,0.0
         print(popt,pcov)
         fit = []
-        for i in range(len(pwm_norm)): fit.append( func(pwm_norm[i],popt) )        
+        for i in range(len(pwm_norm)): fit.append( fitFunc(pwm_norm[i],popt) )        
         createFig23(pwm_norm, thrust_norm, fit)
         print('DONE')
-            
+                
+        if saveFiles:
+            fname = 'esc-thr-curve.'+str(escIndex)
+            F = open( fname+'.raw.dat', 'w')
+            F.write( 'i\tpwm\tpwm_scaled\trpm\tcurrent\tthrust\n' )
+            for i in range(len(record.pwm)):
+                line = ''
+                line += str(i) + '\t'
+                line += str(record.pwm[i]) + '\t'
+                line += '{:.6f}'.format(pwm_scaled[i]) + '\t'
+                line += '{:.6f}'.format(record.rpm[i]) + '\t'
+                line += '{:.6f}'.format(record.current[i]) + '\t'
+                line += '{:.6f}'.format(thrust[i]) + '\n'
+                F.write( line )
+            F.close()
+    
+            F = open( fname+'.normalized.dat', 'w')
+            F.write( 'i\tpwm_norm\tthrust_norm\tfit\n' )
+            for i in range(len(pwm_norm)):
+                line = ''
+                line += str(i) + '\t'
+                line += '{:.6f}'.format(pwm_norm[i]) + '\t'
+                line += '{:.6f}'.format(thrust_norm[i]) + '\t'
+                line += '{:.6f}'.format(fit[i]) + '\n'
+                F.write( line )
+            F.close()
     
     plt.show(block=True)
+    
