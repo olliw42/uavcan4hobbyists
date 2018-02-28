@@ -184,27 +184,26 @@ def createFig1(pwm_scaled,thrust):
     fig1.canvas.draw()
     
     
-def calculateNormalizedThrustCurve(_pwm,_thrust,MOT_SPIN_MIN=0.15,MOT_SPIN_MAX=0.95):
+def calculateNormalizedThrustCurve(_pwm_scaled,_thrust,spin_min=0.15,spin_max=0.95):
     pwm_norm = []
     thrust_norm = []
-    pwm_min = 1.0e10
-    pwm_max = 0.0
     thrust_max = 0.0
-    for i in range(len(_pwm)):
-        pwm = _pwm[i]
-        if pwm < pwm_min: pwm_min = pwm
-        if pwm > pwm_max: pwm_max = pwm
+    thrust_min = 1.0e10
+    for i in range(len(_pwm_scaled)):
+        pwm = _pwm_scaled[i]
+        if (pwm < spin_min) or (pwm > spin_max): continue #only search in the allowed range
         thrust = _thrust[i]
         if thrust > thrust_max: thrust_max = thrust
+        if thrust < thrust_min: thrust_min = thrust
     
-    for i in range(len(_pwm)):
-        pwm = _pwm[i]
-        pwm_n = (pwm-pwm_min)/(pwm_max-pwm_min)
-        if pwm_n < MOT_SPIN_MIN: continue
-        if pwm_n > MOT_SPIN_MAX: continue
+    for i in range(len(_pwm_scaled)):
+        pwm = _pwm_scaled[i]
+        if (pwm < spin_min) or (pwm > spin_max): continue #only accept the allowed range
+        pwm_n = pwm # is identical to scaled pwm
         pwm_norm.append( pwm_n )
         thrust = _thrust[i]
-        thrust_norm.append( thrust/thrust_max )
+        thrust_n = (thrust - thrust_min)/(thrust_max - thrust_min) #must be ranged such that it 0,1 at MOT_SPIN_MIN,MOT_SPIN_MAX
+        thrust_norm.append( thrust_n )
         
     return pwm_norm, thrust_norm
 
@@ -227,20 +226,40 @@ def createFig23(pwm_norm,thrust_norm,fit=None):
     
 '''
 Theory
-    from http://ardupilot.org/copter/docs/motor-thrust-scaling.html
-    % Normalise the throttle and thrust
-    throttle_normalised = (throttle_pwm(working_range) - min(throttle_pwm(working_range)))./(max(throttle_pwm(working_range))-min(throttle_pwm(working_range)));
-    thrust_normalised = thrust./max(thrust);
-    % Perform a least squares fit to solve for a in thrust = (1-a)*throttle + a*throttle^2
-    mdl = @(a,x)((1-a(1))*x + a(1)*x.^2);
-    startingVals = [0.5];
-    coefEsts = nlinfit(throttle_normalised, thrust_normalised, mdl, startingVals);
-    disp(['MOT_THST_EXPO is : ', num2str(coefEsts)]);
+    there is info here http://ardupilot.org/copter/docs/motor-thrust-scaling.html
+    a more detailed account of what the current code in ArduCopter is doing,
+    has been worked out here https://discuss.ardupilot.org/t/using-measured-mot-thst-expo-what-improvement-can-one-expect/26172/23
+    
+    The math doen in ArduCopter can be summarized as follows:
+    // converts thrust_in = [0…1] to throttle_ratio = [0…1]
+    throttle_ratio =
+        [ -(1.0-expo) + sqrt{ (1.0-expo)*(1.0-expo) + 4.0 * expo * lift_max * thrust_in } ]
+        /
+        [ 2.0 * expo * batt_voltage_filt ]
+    // converts throttle_ratio = [0…1] to X = [spin_min…spin_max]
+    X = spin_min + (spin_max - spin_min) * throttle_ratio(thrust_in)
+    // converts X = [0…1] to pwm = [pwm_min…pwm_max]
+    thrust_to_pwm = pwm_min + (pwm_max - pwm_min) * X    
+    =>
+    X_norm = (X - spin_min) / (spin_max - spin_min)    
+    thrust_in = (1-expo) * X_norm + expo * X_norm^2
 '''
-def fitFunc(x, a):
-    return (1.0-a) * x + a * x*x
 
-def fitNormalizedThurstCurve(pwm_norm,thrust_norm):
+fitfunc_x_min = 0.0
+fitfunc_x_max = 1.0
+
+def setFitFuncMinMax(spin_min=0.15,spin_max=0.95):
+    global fitfunc_x_min
+    global fitfunc_x_max
+    fitfunc_x_min = spin_min
+    fitfunc_x_max = spin_max
+
+def fitFunc(x, a):
+    x_n = (x - fitfunc_x_min)/(fitfunc_x_max - fitfunc_x_min)
+    return (1.0-a) * x_n + a * x_n*x_n
+        
+
+def fitNormalizedThurstCurve(pwm_norm,thrust_norm,_min, _max):
     '''
     thrust_norm = []
     for i in range(len(pwm_norm)): thrust_norm.append( func(pwm_norm[i],0.8) )        
@@ -248,7 +267,9 @@ def fitNormalizedThurstCurve(pwm_norm,thrust_norm):
     
     xdata = np.array(pwm_norm)
     ydata = np.array(thrust_norm)
-        
+    
+    setFitFuncMinMax(_min, _max)
+    
     popt, pcov = curve_fit(fitFunc, xdata, ydata, p0=(0.5))    
     return popt[0], pcov[0][0]
     
@@ -279,7 +300,7 @@ if __name__ == '__main__':
 
     node = createNode('COM38');
     
-    escIndex = 0
+    escIndex = 3
 
     print('\nsave files at end (y/n)?')
     saveFiles = False
@@ -307,13 +328,16 @@ if __name__ == '__main__':
         #createFig1(pwm_scaled, thrust)
         print('DONE')
         
+        MOT_SPIN_MIN = 0.15
+        MOT_SPIN_MAX = 0.95
+        
         print('calculating normalized thrust curve... ')
-        pwm_norm, thrust_norm = calculateNormalizedThrustCurve(pwm_scaled, thrust, 0.15, 0.95)
+        pwm_norm, thrust_norm = calculateNormalizedThrustCurve(pwm_scaled, thrust, MOT_SPIN_MIN, MOT_SPIN_MAX)
         createFig23(pwm_norm, thrust_norm)
         print('DONE')
         
         print('fitting normalized thrust curve... ')
-        popt, pcov = fitNormalizedThurstCurve(pwm_norm, thrust_norm) #       popt, pcov = 0.5,0.0
+        popt, pcov = fitNormalizedThurstCurve(pwm_norm, thrust_norm, MOT_SPIN_MIN, MOT_SPIN_MAX) #       popt, pcov = 0.5,0.0
         print(popt,pcov)
         fit = []
         for i in range(len(pwm_norm)): fit.append( fitFunc(pwm_norm[i],popt) )        
