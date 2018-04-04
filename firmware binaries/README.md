@@ -9,4 +9,4 @@ Files with a "-wobl" in their name require the bootloader to be installed. Insta
 
 * Flash the bootloader using e.g. a ST-Link and the SWD pins or a USB-TLL adapter and the system bootloader. Also do a full erase.
 
-* Upgrade the firmware via UAVCAN, e.g. by using teh UAVCAN GUI Tool.
+* Upgrade the firmware via UAVCAN, e.g. by using the UAVCAN GUI Tool.
