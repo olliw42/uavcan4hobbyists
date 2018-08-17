@@ -13,6 +13,8 @@ This project comprises these UAVCAN nodes and devices:
 
 <strong>UC4H ESC-Actuator Node</strong><br>
 
+<strong>UC4H Air/Airspeed Node</strong><br>
+
 <strong>UC4H Notify Node</strong><br>
 
 <strong>UC4H OreoLED Node</strong><br>
