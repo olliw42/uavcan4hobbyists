@@ -1,0 +1,47 @@
+Stückliste exportiert aus C:/Users/Olli/Documents/Elektronik/Eagle/Uavcan4Hobby/uc4h slcan adapter v101.sch am 14.09.2018 20:08
+
+Part       Value                    Device                 Package            Description                  
+5V-EXT     PH2                      M02PTH                 1X02               Header 2                     
+C1         10u/10V                  C-EUC1206              C1206              CAPACITOR, European symbol   
+C2         100n                     C-EUC0603K             C0603K             CAPACITOR, European symbol   
+C3         1u                       C-EUC0603K             C0603K             CAPACITOR, European symbol   
+C4         100n                     C-EUC0603K             C0603K             CAPACITOR, European symbol   
+C5         100n                     C-EUC0603K             C0603K             CAPACITOR, European symbol   
+C6         100n                     C-EUC0603K             C0603K             CAPACITOR, European symbol   
+C7         100n                     C-EUC0603K             C0603K             CAPACITOR, European symbol   
+C8         100n                     C-EUC0603K             C0603K             CAPACITOR, European symbol   
+C9         100n                     C-EUC0603K             C0603K             CAPACITOR, European symbol   
+C10        4.7u                     C-EUC0805              C0805              CAPACITOR, European symbol   
+C11        100n                     C-EUC0603K             C0603K             CAPACITOR, European symbol   
+CAN#1      JST-GH-4                 JST-GH-4               SM04B-GHS-TB                                    
+CAN#2      JST-GH-4                 JST-GH-4               SM04B-GHS-TB                                    
+CAN#3      PH4                      M04PTH                 1X04               Header 4                     
+CAN#4      PH4                      M04PTH                 1X04               Header 4                     
+CAN-5V-SRC PH2                      M02PTH                 1X02               Header 2                     
+CAN-PWR    PH2                      M02PTH                 1X02               Header 2                     
+D1         PMEG3010ER               DIODE-SCHOTTKYSOD123-W SOD123W-DIODE                                   
+D2         PMEG3010ER               DIODE-SCHOTTKYSOD123-W SOD123W-DIODE                                   
+D3         PMEG3010ER               DIODE-SCHOTTKYSOD123-W SOD123W-DIODE                                   
+F1         FUSE-PTC                 FUSE-PTC               FUSE-1206                                       
+IC1        STM32F103T8              STM32F10XTXU6          VFQFPN36           STM32F101/103 36pad VFQPFN36 
+IC2        MIC5219-3.3YM5-TR        V_REG_TPS76433SOT23-5  SOT23-5            Voltage Regulator            
+IC3        TJA1051TK/3              TJA1051TK/3            HVSON8                                          
+IC4        CP2102N-QFN24            CP2102N-QFN24          QFN24-CP2102N                                   
+JP4        PH2                      M02PTH                 1X02               Header 2                     
+LED1       red                      LEDCHIPLED_0603        CHIPLED_0603       LED                          
+LED2       green                    LEDCHIPLED_0603        CHIPLED_0603       LED                          
+LED3       yellow                   LEDCHIPLED_0603        CHIPLED_0603       LED                          
+LED4       green                    LEDCHIPLED_0603        CHIPLED_0603       LED                          
+LED5       yellow                   LEDCHIPLED_0603        CHIPLED_0603       LED                          
+Q1         CSTCE8M00G55-R0          RESONATORSMD           RESONATOR-SMD      Resonator                    
+R1         10k                      R-EU_R0603             R0603              RESISTOR, European symbol    
+R2         4.7k                     R-EU_R0603             R0603              RESISTOR, European symbol    
+R3         2.2k                     R-EU_R0603             R0603              RESISTOR, European symbol    
+R4         2.2k                     R-EU_R0603             R0603              RESISTOR, European symbol    
+R5         1k                       R-EU_R0603             R0603              RESISTOR, European symbol    
+R6         2.2k                     R-EU_R0603             R0603              RESISTOR, European symbol    
+R7         2.2k                     R-EU_R0603             R0603              RESISTOR, European symbol    
+SJ1        BOOT0                    SOLDERJUMPERNO         SJ_2S-NO           Solder Jumper                
+SWD        PH4                      P4X1_1P27-OCT_BILEX    4X1_1P27_OCT_BILEX                              
+UART2      PH4                      M04PTH                 1X04               Header 4                     
+USB        Amphenol 10118192-0001LF USB-MICROB             USB-MICROB         USB Connectors               
