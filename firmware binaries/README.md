@@ -5,7 +5,7 @@ Discussion thread at rcgroups https://www.rcgroups.com/forums/showthread.php?286
 
 ## Fimwares ##
 
-Files with a "-4bl" or "-wobl" in their name require the bootloader to be installed. Install procedure:
+Files with a "-4bl" in their name require the bootloader to be installed. Install procedure:
 
 * Flash the bootloader using e.g. a ST-Link and the SWD pins or a USB-TLL adapter and the system bootloader. Also do a full erase.
 
