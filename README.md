@@ -9,7 +9,7 @@ This project comprises these UAVCAN nodes and devices:
 
 <strong>UC4H GPS-Magnetometer Node</strong><br>
 
-<strong>UC4H Power Brick Node</strong><br>
+<strong>UC4H PowerBrick Node</strong><br>
 
 <strong>UC4H ESC-Actuator Node</strong><br>
 
@@ -19,11 +19,13 @@ This project comprises these UAVCAN nodes and devices:
 
 <strong>UC4H Notify Node</strong><br>
 
-<strong>UC4H OreoLED Node</strong><br>
-
 <strong>UC4H Display Node</strong><br>
 
-<strong>UC4H Fun-Thing Node</strong><br>
+<strong>UC4H OreoLED Node</strong><br>
+
+<strong>UC4H IndicatorLED Node</strong><br>
+
+<strong>UC4H FunThing Node</strong><br>
 
 <strong>UC4H SLCAN Adapter</strong><br>
 
