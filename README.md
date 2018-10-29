@@ -7,7 +7,7 @@ Discussion thread at rcgroups https://www.rcgroups.com/forums/showthread.php?286
 
 This project comprises these UAVCAN nodes and devices:
 
-<strong>UC4H GPS-Magnetometer Node</strong><br>
+<strong>UC4H GPS-Magnetometer-Barometer Node</strong><br>
 
 <strong>UC4H PowerBrick Node</strong><br>
 
