@@ -42,4 +42,4 @@ Hardware files: All hardware, for which material is provided, is open source har
 ## ACKNOWLEDGMENTS
 
 The UC4H firmwares make use of Libcanard: https://github.com/UAVCAN/libcanard .
-Many thanks to Pavel Kirienko, the main author of Libcanard.
+Many thanks to the UAVCAN team, and Pavel Kirienko especially, the main author of Libcanard.
