@@ -1,9 +1,9 @@
-# UAVCAN For Hobbyists (UC4H)
+﻿# UAVCAN For Hobbyists (UC4H)
 
 The project aims at bringing UAVCAN devices to hobbyists at low cost.
 
 Project web page http://www.olliw.eu/2017/uavcan-for-hobbyists/<br>
-Discussion thread at rcgroups https://www.rcgroups.com/forums/showthread.php?2869828-Uavcan-for-Hobbyists
+Project blog http://www.olliw.eu/2018/uavcan-for-hobbyists-blog/
 
 This project comprises these UAVCAN nodes and devices:
 
@@ -30,11 +30,11 @@ This project comprises these UAVCAN nodes and devices:
 <strong>UC4H SLCAN Adapter</strong><br>
 
 
-## TERMS OF USAGE
+## TERMS OF USAGE / LICENCE
 
-All material provided in the UC4H Github repository is free, and is subject to these conditions: 
+The material provided in the UC4H Github repository is subject to the following conditions. 
 
-Firmware files: Besides unlimited private use you are granted the permission to use them for commercial purposes under the condition that (1) you don’t modify the firmware, e.g. remove or change copyright statements, (2) provide it for free, i.e. don’t charge any explicit or implicit fees to your customers, and (3) correctly and clearly cite the origin of the firmware and the project web page in any product documentation or web page. 
+Firmware files: All firmwares are free (but not open source). Besides unlimited private use you are also granted the permission to use them for commercial purposes under the condition that (1) you don’t modify the firmware, e.g. remove or change copyright statements, (2) provide it for free, i.e. don’t charge any explicit or implicit fees to your customers, and (3) correctly and clearly cite the origin of the firmware and the project web page in any product documentation or web page. 
 
 Hardware files: All hardware, for which material is provided, is open source hardware, under the terms of the TAPR Open Hardware License as published by the Free Hardware Foundation, see http://www.tapr.org/ohl.html. The TAPR license explicitly permits essentially unlimited commercial use, with only few conditions such as that copyright logos are not removed.
 
