@@ -1,0 +1,45 @@
+Stückliste exportiert aus C:/Users/Olli/Documents/Elektronik/Eagle/Uavcan4Hobby/uc4h airspeed v0401.sch am 08.12.2018 23:26
+
+Part Value             Device                Package            Description                  TP_SIGNAL_NAME
+C1   10u/20V           C-EUC1206             C1206              CAPACITOR, European symbol                 
+C2   100n              C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C3   1u                C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C4   1u                C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C5   100n              C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C6   100n              C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C7   100n              C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C8   100n              C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C9   100n              C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C10  10u/10V           C-EUC1206             C1206              CAPACITOR, European symbol                 
+C11  100n              C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+C12  100n              C-EUC0603K            C0603K             CAPACITOR, European symbol                 
+D1   BAT54J            DIODE-SOD110-R        SOD110-R           DIODE                                      
+F1   0ZCK0020FF2G      FUSE-PTCFUSE-0805     FUSE-0805                                                     
+IC1  STM32F103T8       STM32F10XTXU6         VFQFPN36           STM32F101/103 36pad VFQPFN36               
+IC2  MIC5219-5.0YM5-TR V_REG_TPS76433SOT23-5 SOT23-5            Voltage Regulator                          
+IC3  MIC5219-3.3YM5-TR V_REG_TPS76433SOT23-5 SOT23-5            Voltage Regulator                          
+IC4  TJA1051TK/3       TJA1051TK/3           HVSON8                                                        
+IC5  DLHRDLHR-8        DLHRDLHR-8            DLHR-8                                                        
+JP1  JST-GH-4          JST-GH-4              SM04B-GHS-TB                                                  
+JP2  JST-GH-4          JST-GH-4              SM04B-GHS-TB                                                  
+LED1 red               LEDCHIPLED_0603       CHIPLED_0603       LED                                        
+LED2 green             LEDCHIPLED_0603       CHIPLED_0603       LED                                        
+Q1   CSTCE8M00G55-R0   RESONATORSMD          RESONATOR-SMD      Resonator                                  
+R2   4.7k              R-EU_R0603            R0603              RESISTOR, European symbol                  
+R3   1k                R-EU_R0603            R0603              RESISTOR, European symbol                  
+R4   120               R-EU_R0603            R0603              RESISTOR, European symbol                  
+R5   10k               R-EU_R0603            R0603              RESISTOR, European symbol                  
+R6   4.7k              R-EU_R0603            R0603              RESISTOR, European symbol                  
+R7   10k               R-EU_R0603            R0603              RESISTOR, European symbol                  
+R8   10k               R-EU_R0603            R0603              RESISTOR, European symbol                  
+SJ2                    SOLDERJUMPERNO        SJ_2S-NO           Solder Jumper                              
+SJ3                    SOLDERJUMPERNO        SJ_2S-NO           Solder Jumper                              
+SPI1 PINHEAD_3X1       PINHEAD_3X1           PINHEAD_3X1                                                   
+SPI2 PINHEAD_7X1       PINHEAD_7X1           PINHEAD_7X1                                                   
+SWD  PH4               P4X1_1P27-OCT_BILEX   4X1_1P27_OCT_BILEX                                            
+TEMP PINHEAD_3X1       PINHEAD_3X1           PINHEAD_3X1                                                   
+TP1  TPB1,27           TPB1,27               B1,27              Test pad                                   
+TP2  TPB1,27           TPB1,27               B1,27              Test pad                                   
+TP3  TPB1,27           TPB1,27               B1,27              Test pad                                   
+TP4  TPB1,27           TPB1,27               B1,27              Test pad                                   
+TP5  TPB1,27           TPB1,27               B1,27              Test pad                                   
