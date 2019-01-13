@@ -1,0 +1,265 @@
+﻿  <ArduCopter2>
+    <NodeId>
+      <DisplayName>Node Id</DisplayName>
+      <Description>Node Id: Node Id of the UAVCAN component. 0 invokes dynamic Node Id allocation.</Description>
+      <Range>0 100</Range>
+      <User>Standard</User>
+    </NodeId>
+    <Preferred_NodeId>
+      <DisplayName>Preferred NodeId</DisplayName>
+      <Description>Preferred NodeId: If possible, this Node Id is requested during dynamic Node Id allocation.</Description>
+      <Range>0 100</Range>
+      <User>Standard</User>
+    </Preferred_NodeId>
+    <NodeStatus_Rate>
+      <DisplayName>NodeStatus Rate</DisplayName>
+      <Description>NodeStatus Rate: Rate with which the NodeStatus message is emitted.</Description>
+      <Range>50 5000</Range>
+      <Units>ms</Units>
+      <User>Standard</User>
+    </NodeStatus_Rate>
+    <Debug>
+      <DisplayName>Debug</DisplayName>
+      <Description>Debug: Enables debug output, emits protocol.debug.LogMessage messages.</Description>
+      <Values>0:Disabled,1:Standard,2:Undocumented</Values>
+      <User>Standard</User>
+    </Debug>
+    <Node_Configurati>
+      <DisplayName>Node Configuration</DisplayName>
+      <Description>Node Configuration: Bit mask which allows to select a ceratin configuration of the node. Node dependent.</Description>
+      <Values></Values>
+      <User>Standard</User>
+    </Node_Configurati>
+
+    <OutA_Mode>
+      <DisplayName>OutA Mode</DisplayName>
+      <Description>OutA Mode: Sets the type of output signal for channel A.</Description>
+      <Values>0:Disabled,1:Actuator PWM,2:ESC PWM,3:ESC DSHOT</Values>
+      <User>Standard</User>
+    </OutA_Mode>
+    <OutB_Mode>
+      <DisplayName>OutB Mode</DisplayName>
+      <Description>OutB Mode: Sets the type of output signal for channel B.</Description>
+      <Values>0:Disabled,1:Actuator PWM,2:ESC PWM,3:ESC DSHOT</Values>
+      <User>Standard</User>
+    </OutB_Mode>
+    <OutB_Mode>
+      <DisplayName>OutB Mode</DisplayName>
+      <Description>OutB Mode: Sets the type of output signal for channel C.</Description>
+      <Values>0:Disabled,1:Actuator PWM,2:ESC PWM,3:ESC DSHOT</Values>
+      <User>Standard</User>
+    </OutB_Mode>
+    <OutA1_Index>
+      <DisplayName>OutA1 Index</DisplayName>
+      <Description>OutA1 Index: Index in the esc.RawCommand or actuator_id in the actuator.ArrayCommand message to which this output listens. -1: Output is disabled.</Description>
+      <Range>-1 127</Range>
+      <User>Standard</User>
+    </OutA1_Index>
+    <OutA2_Index>
+      <DisplayName>OutA2 Index</DisplayName>
+      <Description>OutA2 Index: Index in the esc.RawCommand or actuator_id in the actuator.ArrayCommand message to which this output listens. -1: Output is disabled.</Description>
+      <Range>-1 127</Range>
+      <User>Standard</User>
+    </OutA2_Index>
+    <OutB1_Index>
+      <DisplayName>OutB1 Index</DisplayName>
+      <Description>OutB1 Index: Index in the esc.RawCommand or actuator_id in the actuator.ArrayCommand message to which this output listens. -1: Output is disabled.</Description>
+      <Range>-1 127</Range>
+      <User>Standard</User>
+    </OutB1_Index>
+    <OutB2_Index>
+      <DisplayName>OutB2 Index</DisplayName>
+      <Description>OutB2 Index: Index in the esc.RawCommand or actuator_id in the actuator.ArrayCommand message to which this output listens. -1: Output is disabled.</Description>
+      <Range>-1 127</Range>
+      <User>Standard</User>
+    </OutB2_Index>
+    <OutC1_Index>
+      <DisplayName>OutC1 Index</DisplayName>
+      <Description>OutC1 Index: Index in the esc.RawCommand or actuator_id in the actuator.ArrayCommand message to which this output listens. -1: Output is disabled.</Description>
+      <Range>-1 127</Range>
+      <User>Standard</User>
+    </OutC1_Index>
+    <OutC2_Index>
+      <DisplayName>OutC2 Index</DisplayName>
+      <Description>OutC2 Index: Index in the esc.RawCommand or actuator_id in the actuator.ArrayCommand message to which this output listens. -1: Output is disabled.</Description>
+      <Range>-1 127</Range>
+      <User>Standard</User>
+    </OutC2_Index>
+    <OutA_PwmPeriod>
+      <DisplayName>OutA PwmPeriod</DisplayName>
+      <Description>OutA PwmPeriod: PWM period, if a PWM output is selected, for channel A.</Description>
+      <Range>2500 20000</Range>
+      <Units>ms</Units>
+      <User>Standard</User>
+    </OutA_PwmPeriod>
+    <OutB_PwmPeriod>
+      <DisplayName>OutB PwmPeriod</DisplayName>
+      <Description>OutB PwmPeriod: PWM period, if a PWM output is selected, for channel B.</Description>
+      <Range>2500 20000</Range>
+      <Units>ms</Units>
+      <User>Standard</User>
+    </OutB_PwmPeriod>
+    <OutC_PwmPeriod>
+      <DisplayName>OutC PwmPeriod</DisplayName>
+      <Description>OutC PwmPeriod: PWM period, if a PWM output is selected, for channel C.</Description>
+      <Range>2500 20000</Range>
+      <Units>ms</Units>
+      <User>Standard</User>
+    </OutC_PwmPeriod>
+    <EscStatus_Rate>
+      <DisplayName>EscStatus Rate</DisplayName>
+      <Description>EscStatus Rate: Rate with which esc.Status messages are emitted for DSHOT outputs.</Description>
+      <Range>0 1000</Range>
+      <Units>ms</Units>
+      <User>Standard</User>
+    </EscStatus_Rate>
+    <Motor_Pole_Pairs>
+      <DisplayName>Motor Pole Pairs</DisplayName>
+      <Description>Motor Pole Pairs: Number of motor pole pairs. Important for converting toi mechanical rpm in the esc.Status message.</Description>
+      <Range>0 24</Range>
+      <User>Standard</User>
+    </Motor_Pole_Pairs>
+    <OutA1_Direction>
+      <DisplayName>OutA1 Direction</DisplayName>
+      <Description>OutA1 Direction: Sets the rotation direction for DSHOT outputs.</Description>
+      <Values>0:Forward,1:Reversed</Values>
+      <User>Standard</User>
+    </OutA1_Direction>
+    <OutA2_Direction>
+      <DisplayName>OutA2 Direction</DisplayName>
+      <Description>OutA2 Direction: Sets the rotation direction for DSHOT outputs.</Description>
+      <Values>0:Forward,1:Reversed</Values>
+      <User>Standard</User>
+    </OutA2_Direction>
+    <OutB1_Direction>
+      <DisplayName>OutB1 Direction</DisplayName>
+      <Description>OutB1 Direction: Sets the rotation direction for DSHOT outputs.</Description>
+      <Values>0:Forward,1:Reversed</Values>
+      <User>Standard</User>
+    </OutB1_Direction>
+    <OutB2_Direction>
+      <DisplayName>OutB2 Direction</DisplayName>
+      <Description>OutB2 Direction: Sets the rotation direction for DSHOT outputs.</Description>
+      <Values>0:Forward,1:Reversed</Values>
+      <User>Standard</User>
+    </OutB2_Direction>
+    <OutC1_Direction>
+      <DisplayName>OutC1 Direction</DisplayName>
+      <Description>OutC1 Direction: Sets the rotation direction for DSHOT outputs.</Description>
+      <Values>0:Forward,1:Reversed</Values>
+      <User>Standard</User>
+    </OutC1_Direction>
+    <OutC2_Direction>
+      <DisplayName>OutC2 Direction</DisplayName>
+      <Description>OutC2 Direction: Sets the rotation direction for DSHOT outputs.</Description>
+      <Values>0:Forward,1:Reversed</Values>
+      <User>Standard</User>
+    </OutC2_Direction>
+    <Led_Oreo_Brightn>
+      <DisplayName>Led Oreo Brightness</DisplayName>
+      <Description>Led Oreo Brightness: Sets the brightness of the OreoLEDs.</Description>
+      <Range>0 100</Range>
+      <Units>%</Units>
+      <User>Standard</User>
+    </Led_Oreo_Brightn>
+    
+    <MagneticField_Ra>
+      <DisplayName>MagneticField Rate</DisplayName>
+      <Description>MagneticField Rate: Rate with which ahrs.MagneticFieldStrength2 messages are emitted. 0:Disabled.</Description>
+      <Range>0 1000</Range>
+      <Units>ms</Units>
+      <User>Standard</User>
+    </MagneticField_Ra>
+    <MagneticField_Id>
+      <DisplayName>MagneticField Id</DisplayName>
+      <Description>MagneticField Id: Value of sensor_id in the ahrs.MagneticFieldStrength2 messages.</Description>
+      <Range>0 100</Range>
+      <User>Standard</User>
+    </MagneticField_Id>
+    <Magnetic_Sensor_>
+      <DisplayName>Magnetic Sensor Type</DisplayName>
+      <Description>Magnetic Sensor Type: Selcts the type of magnetometer chip.</Description>
+      <Values>0:autodetect,0:HMC5883L,1:QMC5883</Values>
+      <User>Standard</User>
+    </Magnetic_Sensor_>
+    <Uart1_ChannelId>
+      <DisplayName>Uart1 ChannelId</DisplayName>
+      <Description>Uart1 ChannelId: Value of channel_id in the tunnel.Broadcast messages. -1:Disabled.</Description>
+      <Range>-1 100</Range>
+      <User>Standard</User>
+    </Uart1_ChannelId>
+    <Uart1_Baudrate>
+      <DisplayName>Uart1 Baudrate</DisplayName>
+      <Description>Uart1 Baudrate: Baudrate of UART1.</Description>
+      <Range>0 460800</Range>
+      <User>Standard</User>
+    </Uart1_Baudrate>
+    <Gps_Rate>
+      <DisplayName>Gps Rate</DisplayName>
+      <Description>Gps Rate: Rate with which gnss.Fix messages are emitted. 0:Disabled. NOT RECOMMENDED TO USE.</Description>
+      <Range>0 1000</Range>
+      <Units>ms</Units>
+      <User>Standard</User>
+    </Gps_Rate>
+    <Gps_TimeStandard>
+      <DisplayName>Gps TimeStandard</DisplayName>
+      <Description>Gps TimeStandard: Leave at default.</Description>
+      <Range>2 3</Range>
+      <User>Gps_TimeStandard</User>
+    </Gps_TimeStandard>
+    <Led_Light_Bright>
+      <DisplayName>Led Light Brightness</DisplayName>
+      <Description>Led Light Brightness: Brightness of the indicator led.</Description>
+      <Range>0 100</Range>
+      <Units>%</Units>
+      <User>Standard</User>
+    </Led_Light_Bright>
+    <Led_Light_Id>
+      <DisplayName>Led Light Id</DisplayName>
+      <Description>Led Light Id: Index into the indication.LightsCommand command array this light is listening to.</Description>
+      <Range>0 20</Range>
+      <Units>%</Units>
+      <User>Standard</User>
+    </Led_Light_Id>
+    <Baro_Rate>
+      <DisplayName>Baro Rate</DisplayName>
+      <Description>Baro Rate: Rate with which air_data.StaticPressure messages are emitted. 0:Disabled.</Description>
+      <Range>0 1000</Range>
+      <Units>ms</Units>
+      <User>Standard</User>
+    </Baro_Rate>
+    <Baro_Sensor_Type>
+      <DisplayName>Baro Sensor Type</DisplayName>
+      <Description>Baro Sensor Type: Selects the type of magnetometer chip. 2 is not recommended.</Description>
+      <Values>0:Autodetection,1:BMP280,2:MS5611</Values>
+      <User>Standard</User>
+    </Baro_Sensor_Type>
+    
+    <Led_Notify_Brigh>
+      <DisplayName>Led Notify Brightness</DisplayName>
+      <Description>Led Notify Brightness: Brightness of the notifier leds.</Description>
+      <Range>0 100</Range>
+      <Units>%</Units>
+      <User>Standard</User>
+    </Led_Notify_Brigh>
+    
+    <Battery_Id>
+      <DisplayName>Battery Id</DisplayName>
+      <Description>Battery Id: Value of battery_id in the uc4h.GenericBatteryInfo messages.</Description>
+      <Range>0 100</Range>
+      <User>Standard</User>
+    </Battery_Id>
+    <Battery_Rate>
+      <DisplayName>Battery Rate</DisplayName>
+      <Description>Battery Rate: Rate with which uc4h.GenericBatteryInfo messages are emitted. 0:Disabled.</Description>
+      <Range>0 1000</Range>
+      <Units>ms</Units>
+      <User>Standard</User>
+    </Battery_Rate>
+    <Battery_Message>
+      <DisplayName>Battery Message</DisplayName>
+      <Description>Battery Message: Selects which UAVCAN message is emitted. 1 is not recommended.</Description>
+      <Values>0:uc4h.GenericBatteryInfo,1:power.BatteryInfo</Values>
+      <User>Standard</User>
+    </Battery_Message>
+  </ArduCopter2>

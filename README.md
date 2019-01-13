@@ -27,6 +27,8 @@ This project comprises these UAVCAN nodes and devices:
 
 <strong>UC4H FunThing Node</strong><br>
 
+<strong>UC4H MavlinkBridge</strong><br>
+
 <strong>UC4H SLCAN Adapter</strong><br>
 
 
