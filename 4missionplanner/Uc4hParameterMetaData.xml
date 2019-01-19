@@ -262,4 +262,75 @@
       <Values>0:uc4h.GenericBatteryInfo,1:power.BatteryInfo</Values>
       <User>Standard</User>
     </Battery_Message>
+    
+    <SERIALTNL0_BAUD>
+      <DisplayName>SerialTunnel0 baud rate</DisplayName>
+      <Description>The baud rate used on this port.</Description>
+      <Values>1:1200,2:2400,4:4800,9:9600,19:19200,38:38400,57:57600,111:111100,115:115200,256:256000,500:500000,921:921600,1500:1500000</Values>
+      <User>Standard</User>
+    </SERIALTNL0_BAUD>
+    <SERIALTNL0_PROT>
+      <DisplayName>Protocol selection for this port.</DisplayName>
+      <Description>Control what protocol to use on this port.</Description>
+      <Values>-1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow, 19:RobotisServo</Values>
+      <User>Standard</User>
+      <RebootRequired>True</RebootRequired>
+    </SERIALTNL0_PROT>
+    <SERIALTNL0_CH_ID>
+      <DisplayName>SerialTunnel0 channel ID</DisplayName>
+      <Description>Value of channel_id in the tunnel.Broadcast UAVCAN message.</Description>
+      <Range>0 255</Range>
+      <User>Standard</User>
+    </SERIALTNL0_CH_ID>
+    <SERIALTNL1_BAUD>
+      <DisplayName>SerialTunnel1 baud rate</DisplayName>
+      <Description>The baud rate used on this port.</Description>
+      <Values>1:1200,2:2400,4:4800,9:9600,19:19200,38:38400,57:57600,111:111100,115:115200,256:256000,500:500000,921:921600,1500:1500000</Values>
+      <User>Standard</User>
+    </SERIALTNL1_BAUD>
+    <SERIALTNL1_PROT>
+      <DisplayName>Protocol selection for this port.</DisplayName>
+      <Description>Control what protocol to use on this port.</Description>
+      <Values>-1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow, 19:RobotisServo</Values>
+      <User>Standard</User>
+      <RebootRequired>True</RebootRequired>
+    </SERIALTNL1_PROT>
+    <SERIALTNL1_CH_ID>
+      <DisplayName>SerialTunnel1 channel ID</DisplayName>
+      <Description>Value of channel_id in the tunnel.Broadcast UAVCAN message.</Description>
+      <Range>0 255</Range>
+      <User>Standard</User>
+    </SERIALTNL1_CH_ID>
+    <SERIALTNL2_BAUD>
+      <DisplayName>SerialTunnel2 baud rate</DisplayName>
+      <Description>The baud rate used on this port.</Description>
+      <Values>1:1200,2:2400,4:4800,9:9600,19:19200,38:38400,57:57600,111:111100,115:115200,256:256000,500:500000,921:921600,1500:1500000</Values>
+      <User>Standard</User>
+    </SERIALTNL2_BAUD>
+    <SERIALTNL2_PROT>
+      <DisplayName>Protocol selection for this port.</DisplayName>
+      <Description>Control what protocol to use on this port.</Description>
+      <Values>-1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow, 19:RobotisServo</Values>
+      <User>Standard</User>
+      <RebootRequired>True</RebootRequired>
+    </SERIALTNL2_PROT>
+    <SERIALTNL2_CH_ID>
+      <DisplayName>SerialTunnel2 channel ID</DisplayName>
+      <Description>Value of channel_id in the tunnel.Broadcast UAVCAN message.</Description>
+      <Range>0 255</Range>
+      <User>Standard</User>
+    </SERIALTNL2_CH_ID>
+    
+    <MNT_STRM_BM>
+      <DisplayName>STorM32 specific bitmask</DisplayName>
+      <Description>STorM32: Bitmask to set some functionalities.</Description>
+      <Values>0:See manual</Values>
+      <User>Standard</User>
+    </MNT_STRM_BM>
+    <MNT_STRM_PTSER>
+      <DisplayName>STorM32 specific passthrough serial</DisplayName>
+      <Description>STorM32: Serial used for pass through. -1: Disabled.</Description>
+      <Values>-1:Disabled, 0:Serial0, 1:Serial1, 2:Serial2, 3:Serial3, 4:Serial4, 5:Serial5, 6:Serial6</Values>
+      <User>Standard</User>
+    </MNT_STRM_PTSER>
   </ArduCopter2>
