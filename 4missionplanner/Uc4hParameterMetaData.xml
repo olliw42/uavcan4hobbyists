@@ -263,6 +263,59 @@
       <User>Standard</User>
     </Battery_Message>
     
+    <Range_FieldOfVie>
+      <DisplayName>Range FieldOfView</DisplayName>
+      <Description>Range FieldOfView: Do not use.</Description>
+      <Range>0 45</Range>
+      <Units>deg</Units>
+      <User>Standard</User>
+    </Range_FieldOfVie>
+    <Range_Max>
+      <DisplayName>Range Max</DisplayName>
+      <Description>Range Max: Do not use.</Description>
+      <Range>0 100</Range>
+      <Units>m</Units>
+      <User>Standard</User>
+    </Range_Max>
+    <Range_Min>
+      <DisplayName>Range Min</DisplayName>
+      <Description>Range Min: Do not use.</Description>
+      <Range>0 100</Range>
+      <Units>m</Units>
+      <User>Standard</User>
+    </Range_Min>
+    <Range_Pitch>
+      <DisplayName>Range Pitch</DisplayName>
+      <Description>Range Pitch: Pitch angle, in deg. Used to identify range finder.</Description>
+      <Range>-90 90</Range>
+      <User>Standard</User>
+    </Range_Pitch>
+    <Range_Yaw>
+      <DisplayName>Range Yaw</DisplayName>
+      <Description>Range Yaw: Yaw angle, in deg. Used to identify range finder.</Description>
+      <Range>-180 180</Range>
+      <User>Standard</User>
+    </Range_Yaw>
+    <Range_Sub_Id>
+      <DisplayName>Range SubId</DisplayName>
+      <Description>Range SubId: To distinguish several sensors for equal angles. Used to identify range finder.</Description>
+      <Range>0 15</Range>
+      <User>Standard</User>
+    </Range_Sub_Id>
+    <Range_Rate>
+      <DisplayName>Range Rate</DisplayName>
+      <Description>Range Rate: Rate with which uc4c.Ditance messages are emitted. 0:Disabled. 10: Minimum.</Description>
+      <Range>0 1000</Range>
+      <Units>ms</Units>
+      <User>Standard</User>
+    </Range_Rate>
+    <Range_Sensor_Typ>
+      <DisplayName>Range Sensor Type</DisplayName>
+      <Description>Range Sensor Type: Selects the type of range finder.</Description>
+      <Values>0:Autodetection,1:TFMini,2:VL53L1x</Values>
+      <User>Standard</User>
+    </Range_Sensor_Typ>
+    
     <SERIALTNL0_BAUD>
       <DisplayName>SerialTunnel0 baud rate</DisplayName>
       <Description>The baud rate used on this port.</Description>

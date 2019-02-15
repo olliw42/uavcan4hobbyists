@@ -4,5 +4,7 @@ uavcan.olliw.storm32.Command                           28302   0x49874d32adb9da7
 uavcan.olliw.storm32.CommandAck                        28303   0x883ea85f57acbbbd    1040
 uavcan.olliw.storm32.Control                           28300   0xbf15fb6305ce5599     250
 uavcan.olliw.storm32.Status                            28301   0xfd38d6aa0f5099a5     282
+uavcan.olliw.uc4h.Distance                             28350   0xe12c901c6174b583      97
+uavcan.olliw.uc4h.DistanceSensorProperties               N/A   0x7fc8d57d4f2ef1d1      64
 uavcan.olliw.uc4h.GenericBatteryInfo                   28310   0x04711ad8cbd503d5     284
 uavcan.olliw.uc4h.Notify                               28340   0x69bc2cb0d471c96f     535
