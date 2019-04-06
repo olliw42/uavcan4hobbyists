@@ -1,0 +1,6 @@
+Stückliste exportiert aus C:/Users/Olli/Documents/GitHub/uavcan4hobbyists/pcbs/UC4H GpsMagBaroLed Carrier/uc4h gpsmagbaro ws2812 v0100.sch am 06.04.2019 08:57
+
+Part Value   Device    Package Description                
+C2   100n    C-EUC0402 C0402   CAPACITOR, European symbol 
+JP1          M05PTH    1X05    Header 5                   
+LED1 WS2812B WS2812B   WS2812B Features and Benefits      

@@ -1,0 +1,43 @@
+Stückliste exportiert aus C:/Users/Olli/Documents/GitHub/uavcan4hobbyists/pcbs/UC4H GpsMagBaroLed Carrier/uc4h gpsmagbaro v0301.sch am 06.04.2019 08:56
+
+Part Value             Device                Package            Description                                           
+C1   10u/25V           C-EUC1206             C1206              CAPACITOR, European symbol                            
+C2   100n              C-EUC0603K            C0603K             CAPACITOR, European symbol                            
+C3   1u                C-EUC0603K            C0603K             CAPACITOR, European symbol                            
+C4   1u                C-EUC0603K            C0603K             CAPACITOR, European symbol                            
+C5   100n              C-EUC0603K            C0603K             CAPACITOR, European symbol                            
+C6   100n              C-EUC0603K            C0603K             CAPACITOR, European symbol                            
+C7   100n              C-EUC0603K            C0603K             CAPACITOR, European symbol                            
+C8   100n              C-EUC0603K            C0603K             CAPACITOR, European symbol                            
+C9   100n              C-EUC0603K            C0603K             CAPACITOR, European symbol                            
+C10  100n              C-EUC0603             C0603              CAPACITOR, European symbol                            
+C11  100n              C-EUC0603             C0603              CAPACITOR, European symbol                            
+C12  100n              C-EUC0603             C0603              CAPACITOR, European symbol                            
+C13  4.7u              C-EUC0805             C0805              CAPACITOR, European symbol                            
+C14  220n              C-EUC0603             C0603              CAPACITOR, European symbol                            
+C15  100n              C-EUC0603             C0603              CAPACITOR, European symbol                            
+C16  100n              C-EUC0603             C0603              CAPACITOR, European symbol                            
+C17  100n              C-EUC0603             C0603              CAPACITOR, European symbol                            
+C18  100n              C-EUC0603             C0603              CAPACITOR, European symbol                            
+C19  100n              C-EUC0603             C0603              CAPACITOR, European symbol                            
+C20  100n              C-EUC0603             C0603              CAPACITOR, European symbol                            
+F1   0ZCK0020FF2G      FUSE-PTCFUSE-0805     FUSE-0805                                                                
+IC1  F103CB            STM32F10XCXT6         TQFP48             ST STM32F101/103 48pin LQFP                           
+IC2  MIC5219-5.0YM5-TR V_REG_TPS76433SOT23-5 SOT23-5            Voltage Regulator                                     
+IC3  MIC5219-3.3YM5-TR V_REG_TPS76433SOT23-5 SOT23-5            Voltage Regulator                                     
+IC4  TJA1051TK/3       TJA1051TK/3           HVSON8                                                                   
+IC5  BMP280            BMP280                BMP280             The BMP280 is an absolute barometric pressure sensor. 
+IC6  HMC5883LSMD       HMC5883LSMD           16LPCC             3 Axis Digital Compass IC                             
+JP1  JST-GH-4TOP-ENTRY JST-GH-4TOP-ENTRY     BM04B-GHS-TBT                                                            
+JP2  JST-GH-4TOP-ENTRY JST-GH-4TOP-ENTRY     BM04B-GHS-TBT                                                            
+LED1 red               LEDCHIPLED_0603       CHIPLED_0603       LED                                                   
+Q1   CSTCE8M00G55-R0   RESONATORSMD          RESONATOR-SMD      Resonator                                             
+R1   4.7k              R-EU_R0603            R0603              RESISTOR, European symbol                             
+R2   120               R-EU_R0603            R0603              RESISTOR, European symbol                             
+R3   10k               R-EU_R0603            R0603              RESISTOR, European symbol                             
+R4   10k               R-EU_R0603            R0603              RESISTOR, European symbol                             
+SJ1  SOLDERJUMPERNO    SOLDERJUMPERNO        SJ_2S-NO           Solder Jumper                                         
+SJ2  SOLDERJUMPERNO    SOLDERJUMPERNO        SJ_2S-NO           Solder Jumper                                         
+SJ3  SOLDERJUMPERNO    SOLDERJUMPERNO        SJ_2S-NO           Solder Jumper                                         
+SJ4  SOLDERJUMPERNO    SOLDERJUMPERNO        SJ_2S-NO           Solder Jumper                                         
+SWD  PH4               P4X1_1P27-OCT_BILEX   4X1_1P27_OCT_BILEX                                                       
