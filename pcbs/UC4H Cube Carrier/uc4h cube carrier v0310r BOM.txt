@@ -1,0 +1,49 @@
+Stückliste exportiert aus C:/Users/Olli/Documents/GitHub/uavcan4hobbyists/pcbs/UC4H Cube Carrier/uc4h cube carrier v0310r.sch am 06.04.2019 08:51
+
+Part Value                Device                 Package                           Description                          BOM
+C1   10u/10V              CPOL-EUSMCA            SMC_A                             POLARIZED CAPACITOR, European symbol    
+C2   100n                 C-EUC0603              C0603                             CAPACITOR, European symbol              
+C3   100n                 C-EUC0603              C0603                             CAPACITOR, European symbol              
+C4   1u                   C-EUC0603              C0603                             CAPACITOR, European symbol              
+C5   100n                 C-EUC0603              C0603                             CAPACITOR, European symbol              
+C6   100n                 C-EUC0603              C0603                             CAPACITOR, European symbol              
+C7   100n                 C-EUC0402              C0402                             CAPACITOR, European symbol              
+C8   100n                 C-EUC0603              C0603                             CAPACITOR, European symbol              
+C9   100n                 C-EUC0603              C0603                             CAPACITOR, European symbol              
+C10  100n                 C-EUC0603              C0603                             CAPACITOR, European symbol              
+C11  100n                 C-EUC0603              C0603                             CAPACITOR, European symbol              
+C12  100n                 C-EUC0603              C0603                             CAPACITOR, European symbol              
+C13  100n                 C-EUC0603              C0603                             CAPACITOR, European symbol              
+D1   PMEG3010ER           DIODE-SCHOTTKYSOD123-W SOD123W-DIODE                                                             
+D2   BAT54J               DIODE-SOD110-R         SOD110-R                          DIODE                                   
+IC1  MAX40200             V_REG_TPS76433SOT23-5  SOT23-5                           Voltage Regulator                       
+IC2  TC1185-3.3VCT713     V_REG_TPS76433SOT23-5  SOT23-5                           Voltage Regulator                       
+JP1  DF17(1.0H)-80DP-0.5V PIX-CUBE-VIA           PIX-CUBE-DF17(1.0H)-80DP-0.5V-VIA                                         
+JP2  USB                  JST-GH-4TOP-ENTRY      BM04B-GHS-TBT                                                             
+JP3  SPK                  B3B-ZR                 B3B-ZR                            JST-ZH Connector                        
+JP4  CAN1                 JST-GH-4TOP-ENTRY      BM04B-GHS-TBT                                                             
+JP5  CAN2                 JST-GH-4TOP-ENTRY      BM04B-GHS-TBT                                                             
+JP6  SERIAL1              JST-GH-6TOP-ENTRY      BM06B-GHS-TBT                                                             
+JP7  SERIAL2              PINHEAD_4X1            PINHEAD_4X1                                                               
+JP8  SERIAL3              PINHEAD_4X1            PINHEAD_4X1                                                               
+JP9  SERIAL4              PINHEAD_4X1            PINHEAD_4X1                                                               
+JP10 SERIAL5              PINHEAD_4X1            PINHEAD_4X1                                                               
+PH1  VDD-BRICK            M02PTH                 1X02                              Header 2                                
+PH2  SBUS                 PINHEAD_3X2            PINHEAD_3X2                                                               
+PH3  SAFEBUZ              PINHEAD_3X2            PINHEAD_3X2                                                               
+PH4  CAN-HIPWR1           M01PTH                 1X01                              Header 1                                
+PH5  CAN-HIPWR2           M01PTH                 1X01                              Header 1                                
+PH6  SWD                  P4X1_1P27-OCT_BILEX    4X1_1P27_OCT_BILEX                                                        
+PH7  SWD2                 P4X1_1P27-OCT_BILEX    4X1_1P27_OCT_BILEX                                                        
+R1   10k                  R-EU_R0402             R0402                             RESISTOR, European symbol               
+R2   10k                  R-EU_R0402             R0402                             RESISTOR, European symbol               
+R3   10k                  R-EU_R0402             R0402                             RESISTOR, European symbol               
+R4   470                  R-EU_R0402             R0402                             RESISTOR, European symbol               
+SH1  SHORT-HT5            SHORT-HT5              SHORT_TOP-50                      Short between two nets               no 
+SH2  SHORT-HT5            SHORT-HT5              SHORT_TOP-50                      Short between two nets               no 
+SH3  SHORT-HT5            SHORT-HT5              SHORT_TOP-50                      Short between two nets               no 
+SJ1  PWR                  SJ-2WAY-WPASTECONNECT  SJ-2WAY-BIG-WPASTEC                                                       
+SJ2  PWR                  SJ-2WAY-STANDARD       SJ-2WAY-BIG                                                               
+SJ3  PWR                  SJ-2WAY-WPASTECONNECT  SJ-2WAY-BIG-WPASTEC                                                       
+SJ4  SJ-3WAY-03           SJ-3WAY-03             SJ-3WAY-WPASTEC                                                           
+T1   FET-NSOT23           FET-NSOT23             SOT23                                                                     

@@ -33,6 +33,8 @@ This project comprises these UAVCAN nodes and devices:
 
 <strong>UC4H SLCAN Adapter</strong><br>
 
+<strong>UC4H Cube Carrier</strong><br>
+
 
 ## TERMS OF USAGE / LICENCE
 
