@@ -1,0 +1,19 @@
+!DOCTYPE uc4h display
+
+FLIGHTMODE, 0,1, 1,   0, 0;
+VOLTAGE,    0, 1, 1,   0, 1;
+GPSFIX,     0, 1, 1,  13, 0;
+GPSSAT,     0, 1, 1,  13, 1
+PREARM,     0, 1, 0,   0, 28;
+EKF,        0, 1, 0,   9, 28;
+POS,        0, 1, 0,  15, 28;
+BANNER,     0, 1, 1,   0, 5;
+
+TEXTFIELD,  1, 1, 1,   0, 0 , lines = 6;
+
+GPSFIX,     2, 0, 0,  40, 17 , font = 1;
+GPSSAT,     2, 0, 0,  35, 40,  font = 1;
+
+FLIGHTMODE, 3, 0, 0,  15, 17 , font = 1;
+
+

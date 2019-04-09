@@ -1,0 +1,48 @@
+The information shown by the UC4H Display can be configured by uploading a 
+configuration file, which is an ordinary text file specifing the location
+of the data items on the screen. The UC4H Display supports up to four pages, 
+which can be selected by a button connected to the B1 pad of the UC4H General-
+Purpose node.
+
+Display Configuration File:
+
+The first line of this file MUST be "!DOCTYPE uc4h display" (without the
+qutoation marks). 
+
+Each entry specifying a data item has the following format:
+
+data item type, screen no (0..3), x unit (0/1), y unit (0/1), x , y, options;
+
+The option field can be omitted of no option shall be specified.
+
+When the x/y unit is set to 0, then the x/y values specify the item location in
+raw display coordinates.
+When the x unit is set to 1, then the x values is multiplied by 6. When the y
+unit is set to 1, then the x values is multiplied by 11. This allows for a more
+convenient placement of the items in respect to the normal font size. 
+
+The included examples files show which data item types are available. 
+
+
+Uploading:
+
+Unfortunately, pyuavcan and the UAVCAN GUI Tool does not support uploading files
+using the UAVCAN methods, but only supports the firmware upload mechanism. Thus, 
+as a work around, the following procedure was implemented:
+
+The node has a parameter UploadItemFile. If set to zero, which is the default, 
+then "Update Fimrware" button works as usual, i.e., allows to upload a new firmware.
+
+However, if UploadItemFile is set to 1, when the selected file will be treated as 
+display configuration file, i.e., is uploaded, parsed, and stored in the respective
+data structure which handles the display items. The new display configuration is
+stored permenently in EEPROM, i.e., a Store ALL is neither required nor would it 
+have that effect.
+
+In order to avoid potential issues, the firmware upload will only work for files 
+with a '.bin' extension, while the display configuration upload will work only 
+for files with an extension which is neither '.bin' nor '.hex'.
+
+Happy playing, and have fun.
+
+
